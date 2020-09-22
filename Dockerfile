@@ -72,7 +72,9 @@ RUN git lfs install --system --skip-repo
 
 # install arcasHLA
 WORKDIR /home/
-RUN git clone https://github.com/RabadanLab/arcasHLA.git arcasHLA-master
+RUN mkdir arcasHLA-master
+COPY ./ arcasHLA-master/
+#RUN git clone https://github.com/RabadanLab/arcasHLA.git arcasHLA-master
 
 ENV PATH="${PATH}:/home/arcasHLA-master/"
 
